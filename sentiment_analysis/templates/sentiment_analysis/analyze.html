@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analyze Sentiment</title>
+</head>
+<body>
+    <h1>Analyze Sentiment</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="url" placeholder="Enter URL">
+        <button type="submit">Analyze</button>
+    </form>
+</body>
+</html>

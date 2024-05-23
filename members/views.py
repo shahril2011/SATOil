@@ -45,7 +45,7 @@ def member_login(request):
             if user is not None:
                 
                 auth.login(request, user)
-                return redirect("dashboard")
+                return redirect("")
             
     context = {'loginform' : form}
     return render(request, 'members/login.html', context=context)
@@ -59,3 +59,6 @@ def member_logout(request):
 def dashboard(request):
     user_name = request.user.username  # Assuming the username is used as the user's name
     return render(request, 'members/dashboard.html', {'user_name': user_name})
+
+def sentiment_analysis(request):
+    return render(request, 'sentiment_analysis/analyze')

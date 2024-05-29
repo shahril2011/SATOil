@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Additional styles if needed */
+        .custom-title {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-group {
+            margin-bottom: 10px; /* Reduce margin between form groups */
+        }
+        .form-control {
+            height: calc(2.25rem + 2px); /* Adjust input height */
+        }
+        .btn-block {
+            margin-top: 10px; /* Adjust button position */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center custom-title">Reset Password</h5>
+                        <form method="POST" action="{% url 'reset_password' %}">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="username">Username:</label>
+                                <input type="text" class="form-control" id="username" name="username" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Reset Password</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

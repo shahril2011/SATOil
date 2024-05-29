@@ -1,15 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Analyze Sentiment</title>
-</head>
-<body>
-    <h1>Analyze Sentiment</h1>
-    <form method="post">
-        {% csrf_token %}
-        <input type="text" name="url" placeholder="Enter URL">
-        <button type="submit">Analyze</button>
-    </form>
-</body>
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="en">
+
+    <head>
+       <!-- meta data -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>SATOil Homepage</title>
+
+        <!--font-family-->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        
+        <!-- For favicon png -->
+        <link rel="shortcut icon" type="image/icon" href="{% static 'sentiment_analysis/logo/favicon.png' %}">
+        
+        <!--font-awesome.min.css-->
+        <link rel="stylesheet" href="{% static 'sentiment_analysis/css/font-awesome.min.css' %}">
+
+        <!--linear icon css-->
+        <link rel="stylesheet" href="{% static 'sentiment_analysis/css/linearicons.css' %}">
+
+        <!--animate.css-->
+        <link rel="stylesheet" href="{% static 'sentiment_analysis/css/animate.css' %}">
+
+        <!--flaticon.css-->
+        <link rel="stylesheet" href="{% static 'sentiment_analysis/css/flaticon.css' %}">
+
+        <!--slick.css-->
+        <link rel="stylesheet" href="{% static 'sentiment_analysis/css/slick.css' %}">
+        <link rel="stylesheet" href="{% static 'sentiment_analysis/css/slick-theme.css' %}">
+        
+        <!--bootstrap.min.css-->
+        <link rel="stylesheet" href="{% static 'sentiment_analysis/css/bootstrap.min.css' %}">
+        
+        <!-- bootsnav -->
+        <link rel="stylesheet" href="{% static 'sentiment_analysis/css/bootsnav.css' %}">    
+        
+        <!--style.css-->
+        <link rel="stylesheet" href="{% static 'sentiment_analysis/css/style.css' %}">
+        
+        <!--responsive.css-->
+        <link rel="stylesheet" href="{% static 'sentiment_analysis/css/responsive.css' %}">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+	
+	<body>
+		<!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+		{% include 'sentiment_analysis/navbar.html' %}
+
+        <div class="main-container container" style="margin-top: 30px;">
+            <div class="row">
+              <!-- Main Content -->
+              <div class="col-md-8 main-content" style="padding: 20px; margin-bottom: 20px; background-color: #f9f9f9; border-radius: 5px;">
+                <h2 style="margin-top: 20px; margin-bottom: 10px;">What is Sentiment Analysis?</h2>
+                <p>Sentiment analysis, also known as opinion mining, is the process of analyzing text to determine the sentiment expressed within it. It involves identifying and categorizing opinions expressed in a piece of text as positive, negative, or neutral. This process can be applied to various forms of text data, such as customer reviews, social media posts, and news articles.</p>
+                <h3 style="margin-top: 15px; margin-bottom: 10px;">How to Execute Sentiment Analysis</h3>
+                <p>To execute sentiment analysis using our tool, simply input the text or URL you want to analyze into the provided interface. Our tool will then utilize natural language processing techniques to analyze the sentiment of the text and provide you with the results.</p>
+                <h2 style="margin-top: 20px; margin-bottom: 10px;">Library Used: NLTK</h2>
+                <p>We utilize the Natural Language Toolkit (NLTK) library for sentiment analysis. NLTK is a leading platform for building Python programs to work with human language data. It provides easy-to-use interfaces to over 50 corpora and lexical resources, such as WordNet, along with a suite of text processing libraries for classification, tokenization, stemming, tagging, parsing, and semantic reasoning.</p>
+              </div>
+              <!-- Feature Content -->
+              <div class="col-md-4 feature-content" style="padding: 20px; margin-bottom: 20px; background-color: #f1f1f1; border-radius: 5px;">
+                <h2 style="margin-top: 20px; margin-bottom: 10px;">Features</h2>
+                <p><strong>Text:</strong> Users can input their text or copy & paste from other resources.</p>
+                <p><strong>URL:</strong> Using MPOC article, users can enter the link to run the sentiment analysis tool.</p>
+                <h2 style="margin-top: 20px; margin-bottom: 10px;">Benefits for the User</h2>
+                <p>Our sentiment analysis tool offers several benefits for users:</p>
+                <ul>
+                  <li>1. Gain insights into customer opinions and feedback.</li>
+                  <li>2. Monitor brand reputation and sentiment on social media.</li>
+                  <li>3. Identify emerging trends and topics in online discussions.</li>
+                  <li>4. Make data-driven decisions based on sentiment analysis results.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        
+    </body>
+	
 </html>

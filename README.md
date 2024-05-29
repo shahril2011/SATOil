@@ -43,18 +43,14 @@ Start the Django development server:
 
 Your Django project should now be up and running. Open your browser and navigate to http://127.0.0.1:8000/ to see your project.
 
-Additional Commands
+# Additional Commands
 To deactivate the virtual environment:
-
 `exit`
 
 To install a new package and add it to Pipfile:
-
 `pipenv install package_name`
 
 To uninstall a package and remove it from Pipfile:
-
-
 `pipenv uninstall package_name`
 
 

@@ -1,4 +1,14 @@
-### Welcome to SATOil, where we can analyze the sentiment of palm oil post using the link of the post. The post will be processed and bring out the output of the sentiment.
+### What is SATOil?
+SATOil or Sentiment Analysis Tool to monitor public opinion about palm Oil is used to analyze the sentiment of text or website article from MPOC to determine the sentiment either it is Positive, Negative, or Neutral. In this sentiment analysis tool, users are able to enter the input as text or enter the website article URL from MPOC to print the output to the users.
+
+# Benefit
+1. Able to analyze the sentiment that are input from users.
+2. Free to use and easy to use
+
+# Members
+1. They are able to choose between text or URL.
+2. They are able to view the history of their sentiment analysis activity
+3. Print out their analyse to PDF.
 
 
 # SATOil Project

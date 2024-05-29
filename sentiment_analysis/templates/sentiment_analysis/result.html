@@ -48,13 +48,17 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <!-- jsPDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
 </head>
 <body>
     {% include 'sentiment_analysis/navbar.html' %}
 
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-8" id="print-content">
                 <!-- Text Box -->
                 <div class="p-4 border rounded mb-4 bg-light">
                     <h1 class="text-center">Sentiment Analysis Result</h1>
@@ -72,7 +76,25 @@
                     </div>
                 </div>
             </div>
+            <div class="text-center" style="margin-top: 20px">
+                <button id="download-pdf" class="btn btn-primary">Download PDF</button>
+            </div>
         </div>
     </div>
+
+    <!-- JavaScript to Print the Content -->
+    <script>
+        // Function to print the content of the print-content div
+        function printContent() {
+            var content = document.getElementById('print-content').innerHTML;
+            var originalBody = document.body.innerHTML;
+            document.body.innerHTML = content;
+            window.print();
+            document.body.innerHTML = originalBody;
+        }
+
+        // Add event listener to the download button
+        document.getElementById('download-pdf').addEventListener('click', printContent);
+    </script>
 </body>
 </html>

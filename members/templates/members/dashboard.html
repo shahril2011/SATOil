@@ -35,6 +35,9 @@
         .logout-btn {
             margin-top: 10px; /* Adjust button position */
         }
+        .history-btn{
+            margin-top: 10px; /* Adjust button position */
+        }
         .sentiment-analysis-btn {
             margin-top: 10px; /* Adjust button position */
         }
@@ -47,8 +50,9 @@
                 <div class="dashboard-title">
                     <h1>{{ user_name }}'s Dashboard</h1>
                 </div>
-                <a href="{% url 'member_logout' %}" class="btn btn-primary btn-block logout-btn">Logout from account</a>
                 <a href="{% url 'sentiment_analysis' %}" class="btn btn-info btn-block sentiment-analysis-btn">Sentiment Analysis Tool</a>
+                <a href="{% url 'review_history' %}" class="btn btn-info btn-block history-btn">Review History</a>
+                <a href="{% url 'sentiment_analysis' %}" class="btn btn-danger btn-block sentiment-analysis-btn">Logout from account</a>
             </div>
         </div>
     </div>

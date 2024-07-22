@@ -43,8 +43,7 @@ def member_login(request):
             
             if user is not None:
                 login(request, user)
-                # Redirect to a specified URL after login. Ensure this is a valid URL.
-                return redirect("")  # Update this to the correct URL
+                return redirect("dashboard")  # Update this to the correct URL
             else:
                 # Invalid login details provided
                 print("Authentication failed: Invalid username or password")
@@ -76,7 +75,7 @@ def set_new_password(request):
                 user.set_password(password)
                 user.save()
                 messages.success(request, 'Password reset successfully.')
-                return redirect('login')
+                return redirect('member_login')
             except User.DoesNotExist:
                 messages.error(request, 'User does not exist.')
                 return redirect('reset_password')

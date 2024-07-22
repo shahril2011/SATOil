@@ -1,13 +1,66 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Error</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Error Page</title>
+
+    <!--font-family-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        
+    <!-- For favicon png -->
+    <link rel="shortcut icon" type="image/icon" href="{% static 'sentiment_analysis/logo/favicon.png' %}">
+    
+    <!--font-awesome.min.css-->
+    <link rel="stylesheet" href="{% static 'sentiment_analysis/css/font-awesome.min.css' %}">
+
+    <!--linear icon css-->
+    <link rel="stylesheet" href="{% static 'sentiment_analysis/css/linearicons.css' %}">
+
+    <!--animate.css-->
+    <link rel="stylesheet" href="{% static 'sentiment_analysis/css/animate.css' %}">
+
+    <!--flaticon.css-->
+    <link rel="stylesheet" href="{% static 'sentiment_analysis/css/flaticon.css' %}">
+
+    <!--slick.css-->
+    <link rel="stylesheet" href="{% static 'sentiment_analysis/css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'sentiment_analysis/css/slick-theme.css' %}">
+    
+    <!--bootstrap.min.css-->
+    <link rel="stylesheet" href="{% static 'sentiment_analysis/css/bootstrap.min.css' %}">
+    
+    <!-- bootsnav -->
+    <link rel="stylesheet" href="{% static 'sentiment_analysis/css/bootsnav.css' %}">    
+    
+    <!--style.css-->
+    <link rel="stylesheet" href="{% static 'sentiment_analysis/css/style.css' %}">
+    
+    <!--responsive.css-->
+    <link rel="stylesheet" href="{% static 'sentiment_analysis/css/responsive.css' %}">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
-    <h1>Error</h1>
-    <p>An error occurred while analyzing the sentiment:</p>
-    <p>{{ error }}</p>
-    <p>Please try again later or contact support for assistance.</p>
+    {% include 'sentiment_analysis/navbar.html' %}
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="p-4 border rounded mb-4 bg-light text-left">
+                    <h1 class="text-left text-danger">Error</h1>
+                    <p class="text-left text-danger"><strong>Something went wrong. Please try again later.</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

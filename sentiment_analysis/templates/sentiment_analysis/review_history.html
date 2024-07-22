@@ -64,10 +64,13 @@
     {% include 'sentiment_analysis/navbar.html' %}
 
     <div class="container small-container mt-5">
-        <h1 class="mb-4">Your Review History</h1>
+        <h1 class="mb-4">Review History</h1>
         <table class="table table-striped" style="margin-top: 20px">
             <thead class="thead-light-green">
                 <tr>
+                    {% if is_admin %}
+                    <th scope="col">User</th>
+                    {% endif %}
                     <th scope="col">Text</th>
                     <th scope="col">Sentiment</th>
                     <th scope="col">Date</th>
@@ -77,6 +80,9 @@
             <tbody>
                 {% for review in user_reviews %}
                 <tr>
+                    {% if is_admin %}
+                    <td>{% if review.user %}{{ review.user.username }}{% else %}Anonymous{% endif %}</td>
+                    {% endif %}
                     <td>{{ review.text|truncatechars:50 }}</td>
                     <td>{{ review.sentiment }}</td>
                     <td>{{ review.time_date|date:"Y-m-d" }}</td>
@@ -90,7 +96,7 @@
                 </tr>
                 {% empty %}
                 <tr>
-                    <td colspan="4" class="text-center">No reviews found.</td>
+                    <td colspan="5" class="text-center">No reviews found.</td>
                 </tr>
                 {% endfor %}
             </tbody>
